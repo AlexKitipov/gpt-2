@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gpt-2"
+version = "0.0.0"
+description = "GPT-2 reference code"
+readme = "README.md"
+requires-python = ">=3.11"
+
+[project.optional-dependencies]
+dev = [
+  "black",
+  "mypy",
+  "pytest",
+  "ruff",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["gpt2*"]
+
+[tool.mypy]
+python_version = "3.11"
+
+[[tool.mypy.overrides]]
+module = [
+  "fire",
+  "numpy",
+  "regex",
+  "tensorflow",
+  "tensorflow.contrib.training",
+  "torch",
+  "torch.nn",
+  "torch.nn.functional",
+]
+ignore_missing_imports = true
