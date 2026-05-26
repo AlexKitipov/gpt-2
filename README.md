@@ -41,6 +41,14 @@ tests/
 
 ## Installation
 
+Quick setup (creates `.venv`, upgrades pip, installs project + dev dependencies):
+
+```bash
+./scripts/setup_env.sh
+```
+
+Manual setup:
+
 ```bash
 python -m pip install -e .
 ```
